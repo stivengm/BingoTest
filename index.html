@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Tarjetón de Bingo</title>
+    <script src="index.js"></script>
+</head>
+<body class="is-loading">
+    
+    <div style="height: 30px;">
+        <input type="number" placeholder="Tipo de tarjeton" id="typeGameIdChange">
+
+    </div>
+    <div id="mask-overlay"></div>
+    
+    <div id="app">
+        <!-- PASO 0 -->
+        <div id="step0">
+            <!-- <h1 class="title">¿Estás ingresando como Host o Invitado?</h1>
+
+            <div class="section-buttons-host">
+                <div id="item-admin-btn" class="item-button-host" onclick="selectedUser('admin')">HOST</div>
+                <div id="item-invitado-btn" class="item-button-host" onclick="selectedUser('invitado')">INVITADO</div>
+            </div>
+
+            <div class="section-buttons-save-step0">
+                <button id="save-step0" class="btn-primary">Siguiente</button>
+            </div> -->
+        </div>
+
+        <!-- PASO 1 -->
+        <div id="step1">
+            <!-- <h1 class="title">¿Desea que el tarjetón se genere al azar o ingresarlo manual?</h1>
+
+            <div class="section-buttons-host">
+                <div class="item-button-host" onclick="selectedUser('admin')">Al azar</div>
+                <div class="item-button-host" onclick="selectedUser('invitado')">Manual</div>
+            </div>
+
+            <div class="section-buttons-save-step1">
+                <button id="save-step1" class="btn-primary">Siguiente</button>
+            </div> -->
+        </div>
+        
+        <!-- PASO 2 Y PASO 3 -->
+        <div id="step2and3" class="tarjeton">
+            <div class="header-bingo">
+                <div class="item-letra-bingo item-recuadro-bingo">B</div>
+                <div class="item-letra-bingo item-recuadro-bingo">I</div>
+                <div class="item-letra-bingo item-recuadro-bingo">N</div>
+                <div class="item-letra-bingo item-recuadro-bingo">G</div>
+                <div class="item-letra-bingo item-recuadro-bingo">O</div>
+            </div>
+            <div class="seccion-opciones-tarjeton">
+                <div class="seccion-opciones-item-tarjeton">
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="b-1" onclick="clickItem('b-1')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="i-1" onclick="clickItem('i-1')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="n-1" onclick="clickItem('n-1')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="g-1" onclick="clickItem('g-1')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="o-1" onclick="clickItem('o-1')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                </div>
+                <div class="seccion-opciones-item-tarjeton">
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="b-2" onclick="clickItem('b-2')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="i-2" onclick="clickItem('i-2')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="n-2" onclick="clickItem('n-2')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="g-2" onclick="clickItem('g-2')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="o-2" onclick="clickItem('o-2')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                </div>
+                <div class="seccion-opciones-item-tarjeton">
+                    <div class="item-opcion-tarjeton item-recuadro-bingo"id="b-3" onclick="clickItem('b-3')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo"id="i-3" onclick="clickItem('i-3')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo"id="n-3" onclick="clickItem('n-3')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo"id="g-3" onclick="clickItem('g-3')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo"id="o-3" onclick="clickItem('o-3')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                </div>
+                <div class="seccion-opciones-item-tarjeton">
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="b-4" onclick="clickItem('b-4')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="i-4" onclick="clickItem('i-4')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="n-4" onclick="clickItem('n-4')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="g-4" onclick="clickItem('g-4')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="o-4" onclick="clickItem('o-4')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                </div>
+                <div class="seccion-opciones-item-tarjeton">
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="b-5" onclick="clickItem('b-5')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="i-5" onclick="clickItem('i-5')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="n-5" onclick="clickItem('n-5')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="g-5" onclick="clickItem('g-5')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                    <div class="item-opcion-tarjeton item-recuadro-bingo" id="o-5" onclick="clickItem('o-5')">
+                        <input type="text" min="0" max="9" maxlength="2">
+                    </div>
+                </div>
+            </div>
+    
+            <div id="section-button-save">
+                <button id="save" class="btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="bingo-ball">
+        <span class="bingo-letter">B</span>
+        <span class="bingo-number">12</span>
+    </div> -->
+
+
+
+</body>
+</html>
